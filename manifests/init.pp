@@ -27,8 +27,17 @@ class { "apache":
     logs_dir      => "/var/log/magento.vm/logs"
 }
 
+# MySQL
+class { "mysql":
+  root_password => "root",
+  db_name => "magento",
+  db_user => "root",
+  db_password => "root"
+}
+
+
+
 # Includes
-#include mysql
 include php
 include mailcatcher
 include git
