@@ -42,6 +42,13 @@ class apache::install ( $server_name, $document_root, $logs_dir ) {
     }
 
     # Enable the virtualhost
+    exec { "Disable the default virtualhost":
+      command => "a2dissite default",
+      require => [ Package['apache2']],
+      notify => Class['apache::service'],
+    }
+
+    # Enable the virtualhost
     exec { "Enable the virtualhost":
         command => "a2ensite $server_name",
         creates => "/etc/apache2/sites-enabled/$server_name",

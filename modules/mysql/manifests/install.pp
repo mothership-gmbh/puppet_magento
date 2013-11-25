@@ -42,3 +42,4 @@ class mysql::install ( $root_password, $db_name, $db_user, $db_password ) {
         ensure => present,
         content => template("mysql/.my.cnf"),
     }
+}

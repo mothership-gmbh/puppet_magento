@@ -12,7 +12,7 @@ class mailcatcher () {
     package { "mailcatcher":
         ensure => latest,
         provider => gem,
-        require => [ Class["php"], Class['apache'] ],
+        require => [  Package['libsqlite3-dev'], Class["php"], Class['apache'] ],
         notify => Service["apache2"],
     }
 

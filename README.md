@@ -26,3 +26,15 @@ The Puppet-Modules can be found in this repository in the folder modules. You ne
  # set symbolic link (example)
  ln -s /opt/puppet_magento/modules ~/modules
 `
+
+##Debuggen
+
+`
+puppet config print modulepath
+`
+
+##Puppet ausführen
+
+`
+puppet apply --verbose --debug --detailed-exitcodes
+`

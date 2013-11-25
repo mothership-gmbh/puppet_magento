@@ -12,7 +12,7 @@ Exec {
         '/bin',
         '/sbin'
     ],
-    logoutput => false,
+    logoutput => true,
 }
 
 # The server
@@ -34,7 +34,6 @@ class { "mysql":
   db_user => "root",
   db_password => "root"
 }
-
 
 
 # Includes
