@@ -9,6 +9,14 @@ class mailcatcher () {
         require => Exec["update"],
       }
 
+
+    # Install the package
+    package { "libsqlite3-dev":
+      name => "libsqlite3-dev",
+      ensure => latest
+    }
+
+
     package { "mailcatcher":
         ensure => latest,
         provider => gem,
